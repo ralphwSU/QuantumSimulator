@@ -11,20 +11,46 @@ import edu.su.engr101.quantum.ComplexMatrix;
 /**
 *  Class for testing complex matrices.
 *
-*  @author put your names here
+*  @author Madison Harris
+*  @author Keyri Arevalo Argueta
+*  @author Stephanie Edlich
 */ 
 public class ComplexMatrixTest {
 
    // Write a test for matrix addition.
    public static void addTest1() {
+      System.out.println("Create the matrix m = [[i,2], [1+i,3]] then add it to matrix c = [[i,2], [1+i,3]]");
+      ComplexMatrix m = new ComplexMatrix(2);
+      m.set_value(0,0, new Complex(0,1));
+      m.set_value(0,1, new Complex(2,0));
+      m.set_value(1,0, new Complex(1,1));
+      m.set_value(1,1, new Complex(3,0));
+      System.out.println(mm.toString());
    }
 
    // Write a test for the adjoint functio.
    public static void adjointTest() {
+   System.out.println("Create the matrix m = [[i,2], [1+i,3]] then compute m.adjoint().");
+      ComplexMatrix m = new ComplexMatrix(2);
+      m.set_value(0,0, new Complex(0,1));
+      m.set_value(0,1, new Complex(2,0));
+      m.set_value(1,0, new Complex(1,1));
+      m.set_value(1,1, new Complex(3,0));
+      ComplexMatrix mm= m.adjoint();
+      System.out.println(mm.toString());
    }
 
    // Write a test for the conjugate function.
-   public static void conjugateTest() {
+   public static void conjugateTest(){ 
+   System.out.println("Create the matrix m = [[i,2], [1+i,3]] then compute m.conjugate().");
+      ComplexMatrix m = new ComplexMatrix(2);
+      m.set_value(0,0, new Complex(0,1));
+      m.set_value(0,1, new Complex(2,0));
+      m.set_value(1,0, new Complex(1,1));
+      m.set_value(1,1, new Complex(3,0));
+      ComplexMatrix mm= m.conjugate();
+      System.out.println(mm.toString());
+      
    }
 
    // Write a test for the equals function.
@@ -75,6 +101,8 @@ public class ComplexMatrixTest {
    public static void main(String[] args) {
       toStringTest();
       multiplyTest();
+      conjugateTest();
+      adjointTest();
 
       // Run each test here after you have implemented it.
    }
