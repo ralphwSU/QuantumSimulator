@@ -71,13 +71,15 @@ public class Complex {
    }
 
    public Complex subtract(Complex z) {
-      // Use add as an example then compute the difference betwteen two complex numbers.     
-      return new Complex(0, 0);
+      double x1 = get_real_part() - z.get_real_part();
+      double y1 = get_imaginary_part() - z.get_imaginary_part();
+      return new Complex(x1, y1);
    }
 
    public Complex multiply(Complex z) {
-      // Use add as an example then compute the product of two complex numbers.
-      return new Complex(0, 0);
+      double x1 = get_real_part() * z.get_real_part();
+      double y1 = get_imaginary_part() * z.get_imaginary_part();
+      return new Complex(x1, y1);
    }
 
    public Complex conjugate() {
@@ -86,8 +88,9 @@ public class Complex {
    }
 
    public Complex divide(Complex z) {
-      // Use add as an example then compute the quotient of two complex numbers.
-      return new Complex(0, 0);
+      double x1 = get_real_part() / z.get_real_part();
+      double y1 = get_imaginary_part() / z.get_imaginary_part();
+      return new Complex(x1, y1);
    }
 
    /**
@@ -110,7 +113,7 @@ public class Complex {
    */
    public boolean equals(Complex z) {
       // 
-      return false;
+      return true;
    } 
    
    public String toString() {
@@ -154,5 +157,9 @@ public class Complex {
    *  the majority of your testing.
    */
    public static void main(String[] args) {
+   Complex z1 = new Complex(1,2);
+   Complex z2 = new Complex(-3,1);
+   Complex z3 = z1.add(z2);
+   System.out.println(z3);
    }
 }

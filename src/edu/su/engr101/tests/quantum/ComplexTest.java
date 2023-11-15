@@ -41,7 +41,9 @@ public class ComplexTest {
    */
    public static void divideTest() {
       System.out.println("divideTest()");
-      // Add a test here.
+      Complex z = new Complex(1,3 );
+      Complex w = new Complex(-2,5);
+      System.out.println("(" + z + ") + (" + w + ") = (" + z.divide(w) + ")");
       System.out.println("");
    }
 
@@ -100,7 +102,9 @@ public class ComplexTest {
    */
    public static void subtractTest() {
       System.out.println("subtractTest()");
-      // Add a test here.
+      Complex z = new Complex(1,3 );
+      Complex w = new Complex(-2,5);
+      System.out.println("(" + z + ") - (" + w + ") = (" + z.subtract(w) + ")");
       System.out.println("");
    }
 
