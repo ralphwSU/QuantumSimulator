@@ -12,6 +12,7 @@ import edu.su.engr101.quantum.QuantumGateFactory;
 *  Class for quantum algorithms.
 *
 *  @author Ralph Wojtowicz
+*  @version Fall 2023
 */ 
 public class QuantumAlgorithms {
 

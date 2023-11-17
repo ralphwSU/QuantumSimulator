@@ -7,7 +7,9 @@ package edu.su.engr101.quantum;
 /**
 *  Class for complex matrices.
 *
-*  @author put your names here
+*  @author Madison Harris
+*  @author Keyri Arevalo Argueta
+*  @author Stephanie Edlich
 */ 
 public class ComplexMatrix {
    private int n;
@@ -59,7 +61,7 @@ public class ComplexMatrix {
       ComplexMatrix t = new ComplexMatrix(n);
       for (int row = 0; row < n; row++) {
          for (int col = 0; col < n; col++) {
-            //t.set_value(col, row,  ???);        // Fix this
+            t.set_value(col, row,  get_value(row, col));        
          }
       }
       return t;
@@ -73,7 +75,7 @@ public class ComplexMatrix {
       ComplexMatrix c = new ComplexMatrix(n);
       for (int row = 0; row < n; row++) {
          for (int col = 0; col < n; col++) {
-            //c.set_value(row, col, ???);          // Fix this
+            c.set_value(row, col, get_value(row, col).conjugate());      
          }
       }
       return c;
@@ -83,8 +85,7 @@ public class ComplexMatrix {
    *  Compute the adjoint (conjugate transpose) of a complex matrix.
    */
    public ComplexMatrix adjoint() {
-      return new ComplexMatrix(0);    // Fix this
-      
+      return conjugate().transpose();   
    }
 
    /**
@@ -99,7 +100,7 @@ public class ComplexMatrix {
          for (int col = 0; col < n; col++) {
             Complex w1 = get_value(row, col);
             Complex w2 = w.get_value(row, col);
-            //result.set_value(row, col, ???);         // Fix this
+            result.set_value(row, col, w1.add(w2));        
          }
       }
       return result;
