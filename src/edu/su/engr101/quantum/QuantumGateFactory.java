@@ -46,8 +46,8 @@ public class QuantumGateFactory {
    public static ComplexMatrix Y() {
       int n = 2;
       ComplexMatrix Y = new ComplexMatrix(n);
-      //Y.set_value(0,1, ???);                    // Fix these two lines
-      //Y.set_value(1,0, ???);
+      Y.set_value(0,1, new Complex(0, -1));                    // Fix these two lines
+      Y.set_value(1,0, new Complex(0, 1));
       return Y;
    }
 
@@ -57,8 +57,8 @@ public class QuantumGateFactory {
    public static ComplexMatrix Z() {
       int n = 2;
       ComplexMatrix Z = new ComplexMatrix(n);
-      //Z.set_value(0,0, ???);                    // Fix these two lines
-      //Z.set_value(1,1, ???);
+      Z.set_value(0,0, new Complex(1,0));                    // Fix these two lines
+      Z.set_value(1,1, new Complex(0,-1));
       return Z;
    }
 
@@ -69,8 +69,8 @@ public class QuantumGateFactory {
    public static ComplexMatrix S() {
       int n = 2;
       ComplexMatrix S = new ComplexMatrix(n);
-      //S.set_value(0,0, ???);                    // Fix these two lines
-      //S.set_value(1,1, ???);
+      S.set_value(0,0, new Complex(1,0));                    // Fix these two lines
+      S.set_value(1,1, new Complex(0,1));
       return S;
    }
 
@@ -92,9 +92,9 @@ public class QuantumGateFactory {
       int n = 2;
       ComplexMatrix Hadamard = new ComplexMatrix(n);
       Hadamard.set_value(0,0, new Complex(1/Math.sqrt(2),  0));
-      //Hadamard.set_value(0,1, ???);          // Fix the next three lines.
-      //Hadamard.set_value(1,0, ???);
-      //Hadamard.set_value(1,1, ???);
+      Hadamard.set_value(0,1, new Complex(1/Math.sqrt(2),  0));          
+      Hadamard.set_value(1,0, new Complex(1/Math.sqrt(2), 0));
+      Hadamard.set_value(1,1, new Complex(-1/Math.sqrt(2), 0));
       return Hadamard;
    }
 
@@ -105,9 +105,9 @@ public class QuantumGateFactory {
       int n = 2;
       ComplexMatrix NOT = new ComplexMatrix(n);
       NOT.set_value(0, 0, Complex.zero());
-      //NOT.set_value(0, 1, ???);                // Fix the next three lines.
-      //NOT.set_value(1, 0, ???);
-      //NOT.set_value(1, 1, ???);
+      NOT.set_value(0, 1, Complex.zero());                // Fix the next three lines.
+      NOT.set_value(1, 0, Complex.one());
+      NOT.set_value(1, 1, Complex.one());
       return NOT;
    }
 
@@ -163,5 +163,12 @@ public class QuantumGateFactory {
    *  for the majority of your testing.
    */
    public static void main(String[] args) {
+   	System.out.println("x = \n" + QuantumGateFactory.X().toString());
+   	System.out.println("y = \n" + QuantumGateFactory.Y().toString());
+   	System.out.println("z = \n" + QuantumGateFactory.Z().toString());
+   	System.out.println("s = \n" + QuantumGateFactory.S().toString());
+   	System.out.println("t = \n" + QuantumGateFactory.T().toString());
+   	System.out.println("hadamard = \n" + QuantumGateFactory.Hadamard().toString());
+   	System.out.println("not = \n" + QuantumGateFactory.NOT().toString());
    }
 }
